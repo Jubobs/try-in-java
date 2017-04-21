@@ -90,6 +90,11 @@ public final class Success<T> extends Try<T> {
     }
 
     @Override
+    public Try<Throwable> invert() {
+        return new Failure<>(new UnsupportedOperationException("Success.failed"));
+    }
+
+    @Override
     public boolean equals(Object obj) {
         if (this == obj) {
             return true;

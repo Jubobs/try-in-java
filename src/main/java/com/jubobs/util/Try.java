@@ -59,4 +59,6 @@ public abstract class Try<T> {
 
     public abstract Try<T> or(Supplier<? extends Try<? extends T>> supplier);
 
+    public abstract Try<Throwable> invert();
+
 }

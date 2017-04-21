@@ -87,6 +87,11 @@ public final class Failure<T> extends Try<T> {
     }
 
     @Override
+    public Try<Throwable> invert() {
+        return new Success<>(throwable);
+    }
+
+    @Override
     public boolean equals(Object obj) {
         if (this == obj) {
             return true;
